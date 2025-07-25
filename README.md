@@ -63,15 +63,16 @@ Built with **BigQuery**, **dbt**, **BigQuery ML**, and visualized through **Stre
 
 ---
 ## Project Structure
-.
-├── streamlit_app.py              # Streamlit dashboard
-├── publish_events.py            # Event simulator
-├── synthetic_*.csv              # Sample datasets
-├── live_shopping_dbt/           # dbt models and transformation layers
-│   ├── models/
-│   ├── seeds/
-│   └── dbt_project.yml
-└── .streamlit/secrets.toml      # Config (not committed)
+
+
+  ├── streamlit_app.py              # Streamlit dashboard
+  ├── publish_events.py            # Event simulator
+  ├── synthetic_*.csv              # Sample datasets
+  ├── live_shopping_dbt/           # dbt models and transformation layers
+  │   ├── models/
+  │   ├── seeds/
+  │   └── dbt_project.yml
+  └── .streamlit/secrets.toml      # Config (not committed)
 ---
 ### How to View the Streamlit Dashboard
 
