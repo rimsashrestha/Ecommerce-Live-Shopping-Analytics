@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_live_events
+    description: "Cleans and prepares raw live shopping events"
+    columns:
+      - name: stream_id
+      - name: viewer_id
+      - name: event_time
+      - name: event_type
+

@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: live_shopping_raw
+    description: "Raw data from Pub/Sub ingestion"
+    database: live-shopping-analytics-466418
+    schema: live_shopping_raw
+
+    tables:
+      - name: live_events
+        description: "Streaming clickstream data"
+
