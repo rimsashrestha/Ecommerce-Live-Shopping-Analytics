@@ -72,3 +72,25 @@ Built with **BigQuery**, **dbt**, **BigQuery ML**, and visualized through **Stre
 │   ├── seeds/
 │   └── dbt_project.yml
 └── .streamlit/secrets.toml      # Config (not committed)
+---
+### How to View the Streamlit Dashboard
+
+To explore the interactive live shopping analytics dashboard on your local machine, follow these steps:
+
+#### Step 1: Clone the Repository
+```bash
+git clone https://github.com/rimsashrestha/Ecommerce-Live-Shopping-Analytics.git
+cd Ecommerce-Live-Shopping-Analytics
+
+### Step 2: Install Dependencies
+Make sure you have Python 3.8 or higher installed. Then install the required Python packages:
+```bash
+pip install -r requirements.txt
+
+### Step 3: Launch the Dashboard
+Run the following command to start the Streamlit app:
+```bash
+streamlit run streamlit_app.py
+
+
+
