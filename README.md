@@ -1,10 +1,22 @@
-# 🛍️ Live Shopping Analytics Dashboard
 
-A real-time analytics pipeline to track and segment customer behavior during live shopping streams. Built with **BigQuery**, **dbt**, **BigQuery ML**, and visualized through **Streamlit**.
+# eCommerce: Live Shopping Analytics
+
+This project is an end-to-end analytics pipeline that captures, processes, and visualizes real-time viewer behavior during live shopping streams. Built for brands looking to boost engagement and conversion, the system provides actionable insights using simulated user data, predictive models, and interactive dashboards.
+
+Built with **BigQuery**, **dbt**, **BigQuery ML**, and visualized through **Streamlit**.
 
 ---
 
-## 🔧 Architecture Overview
+## What It Does
+
+- Simulates live stream shopping events (views, clicks, purchases, exits)
+- Ingests data in real time using Google Cloud Pub/Sub
+- Transforms raw events into sessions and KPIs via dbt in BigQuery
+- Applies ML models (via BigQuery ML) to predict churn and engagement
+- Visualizes live insights in a Streamlit dashboard
+
+---
+##  Architecture Overview
 
 - **Data Ingestion**:  
   Simulated live events (views, clicks, purchases) are generated via Python and streamed through **Google Pub/Sub** into **BigQuery**.
@@ -27,7 +39,7 @@ A real-time analytics pipeline to track and segment customer behavior during liv
 
 ---
 
-## 📊 Key Metrics Displayed
+## Key Metrics Displayed
 
 - Total Sessions / Unique Viewers  
 - Drop-off Rate  
@@ -38,20 +50,25 @@ A real-time analytics pipeline to track and segment customer behavior during liv
 - High-Intent Session Count  
 - Customer Segments (RFM-based)
 
+## Tech Stack
+
+| Layer            | Tool/Technology                         |
+|------------------|------------------------------------------|
+| Event Simulation | Python, Puppeteer                       |
+| Streaming        | Google Pub/Sub                          |
+| Data Warehouse   | Google BigQuery (Bronze/Silver/Gold)    |
+| Transformation   | dbt (Data Build Tool)                   |
+| Machine Learning | BigQuery ML                             |
+| Dashboard        | Streamlit                               |
+
 ---
-
-## 🚀 Deployment (Streamlit Cloud)
-
-- File: `streamlit_app.py`
-- Uses `google.cloud.bigquery` to query BigQuery
-- Deploy by pushing to GitHub — Streamlit Cloud auto-redeploys
-
----
-
-## 📦 Tech Stack
-
-- Google Pub/Sub  
-- BigQuery  
-- dbt  
-- BigQuery ML  
-- Streamlit Cloud  
+## Project Structure
+.
+├── streamlit_app.py              # Streamlit dashboard
+├── publish_events.py            # Event simulator
+├── synthetic_*.csv              # Sample datasets
+├── live_shopping_dbt/           # dbt models and transformation layers
+│   ├── models/
+│   ├── seeds/
+│   └── dbt_project.yml
+└── .streamlit/secrets.toml      # Config (not committed)
