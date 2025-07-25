@@ -3,15 +3,19 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 import streamlit as st
-from google.cloud import bigquery
-from google.oauth2 import service_account
 
-# Load credentials securely from Streamlit secrets
-credentials = service_account.Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"]
-)
+# COMMENT OUT or REMOVE GCP auth during local testing
+# from google.cloud import bigquery
+# from google.oauth2 import service_account
 
-client = bigquery.Client(credentials=credentials, project=st.secrets["gcp_service_account"]["project_id"])
+# credentials = service_account.Credentials.from_service_account_info(
+#     st.secrets["gcp_service_account"]
+# )
+# client = bigquery.Client(credentials=credentials, project=st.secrets["gcp_service_account"]["project_id"])
+
+# 🧪 MOCK MODE: Use preloaded CSVs or skip querying for demo
+client = None
+
 
 st.set_page_config(page_title="Live Shopping Predictions", layout="wide")
 st.title("🛍️ Session Conversion Predictions")
